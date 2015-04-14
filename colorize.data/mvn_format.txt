@@ -1,0 +1,17 @@
+^\[INFO\] (.*) =    {[INFO]   \1} = {green}
+^\[ERROR\] (.*) =   {[ERROR]  \1} = {red}
+^\[WARNING\] (.*) = {[WARN]   \1} = {magenta}
+^\[DEBUG\] (.*) =   {[DEBUG]  \1} = {blue}
+^Running (.*) =     {[TEST]   \1} = {green}
+
+^Tests (.*Failures:\s*[1-9].*) = {[RESULT] \1} = {red}
+^Tests (.*Errors:\s*[1-9].*) =   {[RESULT] \1} = {red}
+^Tests (.*Skipped:\s*[1-9].*) =  {[RESULT] \1} = {magenta}
+^Tests (.*) =                    {[RESULT] \1} = {green}
+
+^\s*$ = {} = {}
+^[-]*$ = {} = {}
+^ T E S T S$ = {} = {}
+^Results : = {} = {}
+
+(.*) = {\1} = {yellow}

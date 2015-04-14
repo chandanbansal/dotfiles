@@ -1,0 +1,26 @@
+
+
+QUOTE=`cat $DOTFILES/bin/quotes.txt | perl -MList::Util=shuffle -e 'print scalar shuffle(<STDIN>);'`
+
+#cat ~/bin/quotes.txt | perl -MList::Util=shuffle -e 'print scalar shuffle(<STDIN>);'| cowsay
+#echo "\n" 
+#echo " -----"
+echo -e "--------------------------------------------------------------------------------"
+echo "****************     Word of this Session              *****************"
+echo -e "\n${QUOTE}"
+echo -e "--------------------------------------------------------------------------------"
+
+#echo " \n"
+#echo "${QUOTE} "
+#echo " ------ "
+echo " \\    ^__^ "
+echo "  \\   (oo)\\ ________ "
+echo "      (__)\\         )\\/\\ "
+echo "          ||------w |"
+echo "          ||       ||"
+
+#echo -e "--------------------------------------------------------------------------------"
+#echo "****************     Word of this Session              *****************"
+#echo -e "\n${QUOTE}"
+#echo -e "--------------------------------------------------------------------------------"
+

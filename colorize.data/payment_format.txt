@@ -1,0 +1,15 @@
+#highlight {com\.flipkart\.[\.a-zA-Z0-9]*} = {bold magenta}
+#highlight {org\.[\.a-zA-Z0-9]*} = {magenta}
+#highlight {\(.*\.java:\d*\)} = {cyan}
+#highlight {success\S*} = {dark green}
+#highlight {fail\S*} = {red}
+#highlight {[eE]xit.*} = {dark blue}
+#highlight {finsh.*} = {dark blue}
+#highlight {\<O[TD][0-9]*/>} = {bold cyan}
+
+^(.*cbData = .*)(action=[A-Z_]*)(.*)(reasoncode=[A-Z_]*)(.*)(pgdetails=[a-z_]*)(.*) = {\1\2\3\4\5\6\7} = {reset,dark green,reset,dark red,reset,dark blue,reset}
+^(\[[^\]]*\])(\s*ERROR[^\[]*)(\[[^\]]*\])(.*)$ = {\1\2\3\4} = {blue,red,blue,red}
+^(\[[^\]]*\])([^\[]*)(\[[^\]]*\])(.*)$ = {\1\2\3\4} = {blue,green,blue,reset}
+^(.*)$ = {\1} = {red}
+
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
