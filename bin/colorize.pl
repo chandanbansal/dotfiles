@@ -11,7 +11,7 @@ use Getopt::Std;
 use strict;
 
 #my $DEFAULT_DATA_DIR = "$ENV{HOME}/.colorize.data";
-my $DEFAULT_DATA_DIR = "$ENV{DOTFILES}/.colorize.data";
+my $DEFAULT_DATA_DIR = "$ENV{DOTFILES}/data/colorize.data";
 
 sub usage();
 sub load_file($);

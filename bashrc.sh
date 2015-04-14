@@ -41,9 +41,10 @@ shopt -s histappend
 #modify mvn output
 export MVN=/usr/local/bin/mvn
 
-#function mvn {
-#    $MVN $@ | colorize.pl -f mvn
-#}
+#colorize the maven output
+function mvn {
+    $MVN $@ | colorize.pl -f mvn
+}
 
 function duf {
     sudo du -shk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}t${fname}"; break; fi; size=$((size/1024)); done; done
@@ -54,8 +55,8 @@ function svndiff () {
   svn diff -x -b ${1+"$@"} | colordiff
 }
 
-if [ -f ~/script/git-completion.bash ]; then
-  . ~/script/git-completion.bash
+if [ -f $DOTFILES/data/git-completion.bash ]; then
+  . $DOTFILES/data/git-completion.bash
 fi
 
 
