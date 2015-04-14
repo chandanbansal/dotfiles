@@ -62,23 +62,11 @@ fi
 #ssh with save password
 fssh () {  if ! ssh -o 'PasswordAuthentication=no' "$@"; then ssh-copy-id "$@"; ssh "$@"; fi  }
 
-#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
-
-
-logintoall (){
-    newtab loginto pg-app1
-    newtab loginto pg-app2
-    newtab loginto pg-app3
-}
-
 # auto colorify the grep output
 alias grep="grep --color=auto"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
-#export CLICOLOR=true
-#export LSCOLORS='cxgxfxfxbxexexhbadbxbx'
 
 CDPATH=.:/var/www:$CDPATH
 
