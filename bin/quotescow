@@ -1,11 +1,6 @@
 
 
-QUOTE=`cat $DOTFILES/bin/quotes.txt | perl -MList::Util=shuffle -e 'print scalar shuffle(<STDIN>);'`
-
-echo -e "--------------------------------------------------------------------------------"
-echo "****************     Word of this Session              *****************"
-echo -e "\n${QUOTE}"
-echo -e "--------------------------------------------------------------------------------"
+QUOTE=`cat $DOTFILES/data/quotes.txt | perl -MList::Util=shuffle -e 'print scalar shuffle(<STDIN>);'`
 
 echo " \\    ^__^ "
 echo "  \\   (oo)\\ ________ "
@@ -13,4 +8,5 @@ echo "      (__)\\         )\\/\\ "
 echo "          ||------w |"
 echo "          ||       ||"
 
-
+echo -e "\n${QUOTE}"
+echo -e "\n"
