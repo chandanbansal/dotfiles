@@ -26,7 +26,7 @@ packages=(
     openssl
     openssh
     pass
-    peal
+    perl
     python
     ssh-copy-id
     tmux

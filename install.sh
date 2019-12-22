@@ -102,6 +102,8 @@ cd ~/dotfiles
 git pull --ff-only $ORIGIN master || true
 git branch --set-upstream-to=origin/master master
 
+ls -lah
+pwd
 # contains utilities for downloading and installation
 source etc/util.sh
 
