@@ -29,6 +29,7 @@ rmdir Documents/ Pictures/ Public/ Videos/ &>/dev/null || true
 # copy dotfiles separately , normal glob does not match
 cp -r home/.??* ~
 cp -a scripts/* ~/.local/bin/
+cp etc/quotes.txt ~
 
 PLATFORM=$(uname)
 

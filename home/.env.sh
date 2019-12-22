@@ -2,8 +2,12 @@
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 export HOME=~
-export PATH=$DOTFILES/bin:$PATH
+export GOPATH=$HOME/gocode
+export PATH=$HOME/.local/bin:$PATH
+export EDITOR=vim-wrapper
+#export PATH=$DOTFILES/bin:$PATH
 export LANG=en_IN.UTF-8
+export LC_ALL=en_US.UTF-8
 
 #HOME Needs /usr/local/bin before /usr/bin
 #homebrew=/usr/local/bin:/usr/local/sbin
@@ -24,15 +28,17 @@ CDPATH=.:/var/www:$CDPATH
 # Sometimes not set or fully qualified; simple name preferred.
 export HOSTNAME=$(hostname -s)
 
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-export SYSTEM_COLOUR=$($HOME/.local/bin/system-colour $HOSTNAME)
+# export CLICOLOR=1
+# export LSCOLORS=GxFxCxDxBxegedabagaced
 
-if [[ $USER == root ]]; then
-    PROMPT_COLOUR=160 # red
-else
-    PROMPT_COLOUR=$SYSTEM_COLOUR
-fi
+# export GCC_COLORS=1
+# export SYSTEM_COLOUR=$($HOME/.local/bin/system-colour $HOSTNAME)
+
+# if [[ $USER == root ]]; then
+#    PROMPT_COLOUR=160 # red
+# else
+#    PROMPT_COLOUR=$SYSTEM_COLOUR
+# fi
 
 HISTFILE=~/.history
 

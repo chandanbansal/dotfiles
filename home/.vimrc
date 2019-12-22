@@ -11,6 +11,7 @@ set ignorecase        "ignore case while searching
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set backspace=indent,eol,start
 
 "augroup JsonAutoFormat
 "    autocmd!

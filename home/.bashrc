@@ -1,7 +1,7 @@
 source ~/.env.sh
 source ~/.functions.sh
 source ~/.aliases
-
+source quotescow
 #source $DOTFILES/bin/quotescow
 ############### Improve bash history ####################
 
@@ -37,7 +37,7 @@ HISTFILESIZE=$HISTSIZE
 ############### Improve bash history ends ####################
 
 # if you call a different shell, this does not happen automatically. WTF?
-export SHELL=$(which bash)
+#export SHELL=$(which bash)
 
 #PS1="
 #\$(__exit_warn)
@@ -45,9 +45,9 @@ export SHELL=$(which bash)
 #\$ "
 
 # fix backspace on some terminals
-stty erase ^?
+#stty erase ^?
 
-_disable_flow_control
+#_disable_flow_control
 
 
 # Source bash completions
