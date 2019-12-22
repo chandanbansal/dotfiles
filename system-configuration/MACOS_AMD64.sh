@@ -6,4 +6,4 @@
 
 # browserpass config
 sudo mkdir -p "/Library/Application Support/Mozilla/NativeMessagingHosts/"
-sudo cp etc/firefox/com.github.browserpass.native.json "/Library/Application Support/Mozilla/NativeMessagingHosts/"
+#sudo cp etc/firefox/com.github.browserpass.native.json "/Library/Application Support/Mozilla/NativeMessagingHosts/"
