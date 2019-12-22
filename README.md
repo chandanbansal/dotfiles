@@ -1,9 +1,30 @@
-# dotfiles
-to use this project just add following lines in your .bashrc or .profile or .bash_profile.
+Used and tested on MacOsx 
+
+# installation
+Single line
 
 ```
-export DOTFILES=~/dotfiles
-source $DOTFILES/bashrc.sh
+curl -sL https://raw.githubusercontent.com/chandanbansal/dotfiles/master/install.sh | bash && bash
 ```
 
-where DOTFILES variable is location of project your cloned it
+
+# Inclusions for Mac
+* Homebrew
+* Git
+* bash    
+* csshx
+* ffmpeg
+* git
+* htop
+* jq
+* maven
+* mpssh
+* perl
+* python
+* ssh-copy-id
+* tmux
+* tree
+* vim
+* wget
+
+Recently copied lot of files and structure from here https://github.com/naggie/dotfiles. 
