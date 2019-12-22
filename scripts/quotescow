@@ -1,0 +1,12 @@
+
+
+QUOTE=`cat $DOTFILES/data/quotes.txt | perl -MList::Util=shuffle -e 'print scalar shuffle(<STDIN>);'`
+
+echo " \\    ^__^ "
+echo "  \\   (oo)\\ ________ "
+echo "      (__)\\         )\\/\\ "
+echo "          ||------w |"
+echo "          ||       ||"
+
+echo -e "\n${QUOTE}"
+echo -e "\n"

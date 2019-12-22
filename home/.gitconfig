@@ -1,0 +1,34 @@
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = true
+[core]
+    excludesfile = ~/.gitignore_global
+    pager = less
+    sparseCheckout = true
+    editor = vim
+[alias]
+    this   = !git init && git add . && git commit -m \"initial commit\"
+    amend  = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+    ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+
+    lg1 = log -p
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %at) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lm = log --pretty=format:'%s%n   by %C(yellow)%an%Creset (%ad)%n %n%b' --date=local
+    who = shortlog -s --
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
+[credential]
+	helper = osxkeychain
+[help]
+    autocorrect = 1
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[push]
+    default = current
+[pull]
+    default = current
