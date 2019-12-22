@@ -12,7 +12,7 @@
 # - Terminal emulators often have an option typically enabled by default that makes
 #   bold a different color.  It is important to leave this option enabled so that
 #   you can access the entire 16-color Solarized palette, and not just 8 colors.
-# - We favor universality over a greater number of colors.  So we limit the number
+# - We favor universality over a greater number of co/Users/chandan.bansal/dotfiles/home/.dir_colorslors.  So we limit the number
 #   of colors so that this theme will work out of the box in all terminals,
 #   Solarized or not, dark or light.
 # - We choose to have the following category of files:

@@ -1,9 +1,8 @@
-
 source ~/.env.sh
 source ~/.functions.sh
 source ~/.aliases
 
-source $DOTFILES/bin/quotescow
+#source $DOTFILES/bin/quotescow
 ############### Improve bash history ####################
 
 #history format, This will add timestamp to bash_history file. But when we run "history" command in terminal, it will show formated time.
@@ -40,10 +39,10 @@ HISTFILESIZE=$HISTSIZE
 # if you call a different shell, this does not happen automatically. WTF?
 export SHELL=$(which bash)
 
-PS1="
-\$(__exit_warn)
-\[\e[36m\]\${CMD_TIMER_PROMPT}\[\e[38;5;${PROMPT_COLOUR}m\]\u@\H:\$PWD\[\e[38;5;243m\]\$(__git_prompt)\$(__p4_prompt)\[\e[0m\]
-\$ "
+#PS1="
+#\$(__exit_warn)
+#\[\e[36m\]\${CMD_TIMER_PROMPT}\[\e[38;5;${PROMPT_COLOUR}m\]\u@\H:\$PWD\[\e[38;5;243m\]\$(__git_prompt)\$(__p4_prompt)\[\e[0m\]
+#\$ "
 
 # fix backspace on some terminals
 stty erase ^?
@@ -65,5 +64,3 @@ elif [[ -e "/etc/bash_completion" ]]; then
     # standard on linux systems, sources from /etc/bash_completion.d/
 	source "/etc/bash_completion"
 fi
-
-

@@ -59,10 +59,10 @@ function _disable_flow_control {
     stty start undef
 }
 
-# cd then ls
-function cd {
-  builtin cd "$@" && ls --color=auto
-}
+# # cd then ls
+# function cd {
+#   builtin cd "$@" && ls --color=auto
+# }
 
 function __exit_warn {
   # test status of last command without affecting it

@@ -3,6 +3,7 @@
 
 export HOME=~
 export PATH=$DOTFILES/bin:$PATH
+export LANG=en_IN.UTF-8
 
 #HOME Needs /usr/local/bin before /usr/bin
 #homebrew=/usr/local/bin:/usr/local/sbin
