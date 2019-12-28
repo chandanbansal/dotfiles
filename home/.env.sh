@@ -40,6 +40,7 @@ export HOSTNAME=$(hostname -s)
 #    PROMPT_COLOUR=$SYSTEM_COLOUR
 # fi
 
+HISTSIZE=200000
 HISTFILE=~/.history
 
 

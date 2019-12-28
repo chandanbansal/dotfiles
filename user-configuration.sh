@@ -34,6 +34,8 @@ cp etc/quotes.txt ~
 PLATFORM=$(uname)
 
 if [ $PLATFORM == 'Darwin' ]; then
+    cp -r home/Library ~
+    echo "setting mac properties"
 	#disable dialoge to same documents to cloud
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
     #do not show warning while changing extension
@@ -42,6 +44,8 @@ if [ $PLATFORM == 'Darwin' ]; then
     defaults write NSGlobalDomain AppleShowAllExtensions -bool true
     #show all hidden files
     defaults write com.apple.finder AppleShowAllFiles TRUE
+    chflags nohidden ~/Library/
+
     # stop preview from opening every PDF you've ever opened every time you view a PDF
     # (how did apple think this was a good idea!?!?!)
     defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -bool false
@@ -56,10 +60,12 @@ if [ $PLATFORM == 'Darwin' ]; then
     defaults write com.apple.finder ShowPathbar -bool true
     defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+    # When performing a search, search the current folder by default
+    defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
     # remove everything from dock (only active applications should be there, as
     # I use spotlight to launch apps with CMD+Space)
     defaults write com.apple.dock persistent-apps -array
-
 fi
 
 
@@ -93,6 +99,10 @@ grep -q github.com ~/.ssh/known_hosts || cat <<EOF >> ~/.ssh/known_hosts
 github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
 EOF
 
+if PATH="$PATH:/Applications/Firefox.app/Contents/MacOS/" which firefox &> /dev/null; then
+    echo "setup firefox properties.."
+    etc/firefox/customise-profile
+fi
 
 # copy terminal font and rebuild font cache if necessary
 if [ $PLATFORM == 'Darwin' ]; then

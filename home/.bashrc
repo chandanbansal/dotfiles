@@ -18,10 +18,6 @@ HISTCONTROL=ignoredups:ignorespace:erasedups
 
 HISTIGNORE="free*:pwd*:df -h*"
 
-# Store 100000 commands in bash history
-HISTFILESIZE=1000000
-HISTSIZE=100000
-
 # append history entries..
 # created a .bash_logout in home with "history -a \n history -w". That works great
 

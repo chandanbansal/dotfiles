@@ -7,6 +7,9 @@ fi
 
 brew tap homebrew/cask
 
+#https://github.com/Toxblh/MTMR
+#https://github.com/eczarny/spectacle
+brew cask install mtmr spectacle sublime-text firefox spotify
 
 # resolve possible coreutils conflict
 brew unlink md5sha1sum || true
@@ -33,9 +36,7 @@ packages=(
     tree
     vim
     wget
-    youtube-dl
 )
-
 
 for package in "${packages[@]}"; do
     brew upgrade $package || brew install $package
