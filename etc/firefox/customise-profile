@@ -69,8 +69,8 @@ for profile in profiles:
         if not path.isdir(d):
             makedirs(d)
 
-    copy(path.join(script_dir, "chrome/UserChrome.css"), chrome_dir)
-    copy(path.join(script_dir, "chrome/UserContent.css"), chrome_dir)
+    # copy(path.join(script_dir, "chrome/UserChrome.css"), chrome_dir)
+    # copy(path.join(script_dir, "chrome/UserContent.css"), chrome_dir)
 
 
     # copy extensions; only if they don't exist as FF manages updates to them

@@ -9,7 +9,7 @@ brew tap homebrew/cask
 
 #https://github.com/Toxblh/MTMR
 #https://github.com/eczarny/spectacle
-brew cask install mtmr spectacle sublime-text firefox spotify
+brew cask install mtmr spectacle sublime-text firefox spotify sequel-pro
 
 # resolve possible coreutils conflict
 brew unlink md5sha1sum || true

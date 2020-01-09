@@ -13,3 +13,12 @@ cat <<EOF >> ~/.gitconfig
 [github]
 	user = chandanbansal
 EOF
+
+# change shortcuts for Sequel Pro
+# We can check by executing $ defaults read com.sequelpro.SequelPro
+#defaults write com.sequelpro.SequelPro NSUserKeyEquivalents -dict-add "Save Connection" "@^s"
+#defaults write com.sequelpro.SequelPro NSUserKeyEquivalents -dict-add "Save Query" "@s"
+defaults write com.sequelpro.SequelPro NSUserKeyEquivalents '{
+    "Save Connection" = "@^s";
+    "Save Query" = "@s";
+}'

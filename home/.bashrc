@@ -23,9 +23,8 @@ HISTIGNORE="free*:pwd*:df -h*"
 
 # update the values of LINES and COLUMNS. Automatically
 shopt -s checkwinsize
-
+# When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
-
 HISTFILESIZE=$HISTSIZE
 # After each command, save and reload history and delete duplicates. But doesn't work with HISTTIMEFORMAT
 # from http://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history/18443#18443?newreg=092a797bc79b47629a88552d4e44d3e3

@@ -65,7 +65,13 @@ if [ $PLATFORM == 'Darwin' ]; then
 
     # remove everything from dock (only active applications should be there, as
     # I use spotlight to launch apps with CMD+Space)
-    defaults write com.apple.dock persistent-apps -array
+    defaults write com.apple.dock persistent-apps -array;
+    defaults write com.apple.dock static-only -bool true;
+    # Hence we don't need indicator for recent apps, as only active apps will be visible.
+    defaults write com.apple.dock show-process-indicators -bool false;
+    defaults write com.apple.dock autohide -bool true;
+    #to reload Dock
+    killall Dock;
 fi
 
 
