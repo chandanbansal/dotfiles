@@ -110,6 +110,13 @@ if PATH="$PATH:/Applications/Firefox.app/Contents/MacOS/" which firefox &> /dev/
     etc/firefox/customise-profile
 fi
 
+# Backup evernote
+crontab -l > mycron
+echo "00 01 * * * osascript ~/.local/bin/EvernoteBackup.scpt >/dev/null 2>&1" >> mycron 
+cat mycron | uniq | tee mycron 
+crontab mycron
+rm mycron
+
 # copy terminal font and rebuild font cache if necessary
 if [ $PLATFORM == 'Darwin' ]; then
     mkdir -p ~/Library/Fonts

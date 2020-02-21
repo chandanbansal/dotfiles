@@ -31,4 +31,11 @@
 [push]
     default = current
 [pull]
-    default = current
+    default = current[user]
+	name = Chandan Bansal
+	email = chandanbansal2004@gmail.com
+	signingkey = chandanbansal2004@gmail.com
+[github]
+	user = chandanbansal
+[user]
+	name = chandanbansal
