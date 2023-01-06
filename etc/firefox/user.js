@@ -69,3 +69,5 @@ user_pref("browser.fixup.alternate.enabled", false);
 // disable Notification prompts
 user_pref("dom.webnotifications.enabled", false);
 
+// increase history size
+user_pref("places.history.expiration.max_pages", 200000);

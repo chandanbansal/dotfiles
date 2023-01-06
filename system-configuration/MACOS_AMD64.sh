@@ -5,5 +5,5 @@
 #sudo chsh -s /usr/local/bin/bash $(whoami)
 
 # browserpass config
-sudo mkdir -p "/Library/Application Support/Mozilla/NativeMessagingHosts/"
-sudo cp etc/firefox/com.github.browserpass.native.json "/Library/Application Support/Mozilla/NativeMessagingHosts/"
+#sudo mkdir -p "/Library/Application Support/Mozilla/NativeMessagingHosts/"
+#sudo cp etc/firefox/com.github.browserpass.native.json "/Library/Application Support/Mozilla/NativeMessagingHosts/"

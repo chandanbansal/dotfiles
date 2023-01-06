@@ -4,6 +4,7 @@
 export HOME=~
 export GOPATH=$HOME/gocode
 export PATH=$HOME/.local/bin:$PATH
+
 export EDITOR=vim-wrapper
 #export PATH=$DOTFILES/bin:$PATH
 export LANG=en_IN.UTF-8

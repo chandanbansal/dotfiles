@@ -36,7 +36,7 @@ PLATFORM=$(uname)
 if [ $PLATFORM == 'Darwin' ]; then
     cp -r home/Library ~
     echo "setting mac properties"
-	#disable dialoge to same documents to cloud
+  	#disable dialoge to same documents to cloud
     defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
     #do not show warning while changing extension
     defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
