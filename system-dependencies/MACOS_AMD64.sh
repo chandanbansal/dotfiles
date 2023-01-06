@@ -7,7 +7,7 @@ fi
 
 brew tap homebrew/cask
 
-brew install sublime-text firefox spotify sequel-pro evernote --cask
+brew install sublime-text firefox spotify sequel-pro evernote openoffice menumeters notion slack vlc --cask
 
 # resolve possible coreutils conflict
 brew unlink md5sha1sum || true
