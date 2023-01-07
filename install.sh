@@ -8,6 +8,11 @@ ORIGIN=https://github.com/chandanbansal/dotfiles.git
 # exit on error
 set -Eeo pipefail
 
+#print function
+say() {
+    printf '\n\e[1;32m%s\e[m\n' "$*"
+}
+
 # Supportted platforms. For more specific stuff, such as extra packages for
 # desktop vs server or version specific stuff, put that logic in the platform
 # specific install-dependencies script.
@@ -19,14 +24,17 @@ FEDORA_AMD64=FEDORA_AMD64
 RASPBIAN_ARMV5=RASPBIAN_ARMV5
 
 # authorise sudo early on
-echo "Please enter sudo password. Sudo session will be kept alive until this script exits."
-# sudo -v is technically correct but asks for a non-existent password on fresh AWS Ubuntu AMIs
-sudo echo -n
+if ! sudo -n echo 2>/dev/null; then
+    echo "Please enter sudo password. Sudo session will be kept alive until this script exits."
+    # sudo -v is technically correct but asks for a non-existent password on fresh AWS Ubuntu AMIs
+    sudo echo -n
+fi
 
 # sudo keepalive. This will keep the sudo watchdog fed until this script exits.
 # This works buy poking the parent process to see if it's still alive.
 while true; do sudo -n true; sleep 15; kill -0 "$$" || exit; done 2>/dev/null &
 
+say "OS detection..."
 
 function get_platform() {
     if uname | grep -q Linux; then
@@ -60,8 +68,9 @@ function get_platform() {
     fi
 }
 
-
 PLATFORM=$(get_platform)
+
+say "Bootstrapping..."
 
 # make sure git/sudo is installed
 case $PLATFORM in
@@ -80,7 +89,13 @@ case $PLATFORM in
         ;;
     $MACOS_AMD64)
         # triggers install of xcode cli tools or effectively does nothing
+        # this will cause the script to fail the first time
         git --version
+        # brew now expects /opt/homebrew/bin/ to be in the path. Need to do
+        # this manually for provisioning
+        # same for old location to linking scripts still work
+        export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/usr/local/bin:$PATH"
         ;;
     $UBUNTU_AMD64)
         sudo apt-get -y install git
@@ -119,3 +134,5 @@ if [[ $(whoami) == chandan.bansal ]]; then
 else
     ./user-configuration.sh
 fi
+
+say "Provisioning successful."
