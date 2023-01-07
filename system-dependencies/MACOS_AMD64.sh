@@ -1,10 +1,12 @@
+#!/usr/bin/env bash
 
-if [ ! -f /usr/homebrew/bin/brew ]; then
+if [ ! -f /opt/homebrew/bin/brew ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
     brew update
 fi
 
+echo "install applications"
 # recommended, uses /Applications now.
 brew tap homebrew/cask
 brew install --cask sublime-text firefox spotify sequel-pro evernote openoffice menumeters notion slack vlc

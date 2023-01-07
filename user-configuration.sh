@@ -72,8 +72,10 @@ if [ $PLATFORM == 'Darwin' ]; then
     defaults write com.apple.dock show-process-indicators -bool false;
     defaults write com.apple.dock autohide -bool true;
 
-    # shot full safari url!
-    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true" && killall Safari
+    # show full safari url!
+    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true"
+
+    echo "mac properties completed"
 
     #to reload Dock
     killall Dock;
@@ -116,8 +118,10 @@ EOF
 #    etc/firefox/customise-profile
 #fi
 
+
 # Backup evernote
-crontab -l > mycron
+echo "set up evernote backup crontab"
+crontab -l > mycron || true
 echo "00 01 * * * osascript ~/.local/bin/EvernoteBackup.scpt >/dev/null 2>&1" >> mycron 
 cat mycron | uniq | tee mycron 
 crontab mycron
