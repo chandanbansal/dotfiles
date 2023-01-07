@@ -5,9 +5,9 @@ else
     brew update
 fi
 
+# recommended, uses /Applications now.
 brew tap homebrew/cask
-
-brew install sublime-text firefox spotify sequel-pro evernote openoffice menumeters notion slack vlc --cask
+brew install --cask sublime-text firefox spotify sequel-pro evernote openoffice menumeters notion slack vlc
 
 # resolve possible coreutils conflict
 brew unlink md5sha1sum || true
