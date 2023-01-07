@@ -67,9 +67,14 @@ if [ $PLATFORM == 'Darwin' ]; then
     # I use spotlight to launch apps with CMD+Space)
     defaults write com.apple.dock persistent-apps -array;
     defaults write com.apple.dock static-only -bool true;
+
     # Hence we don't need indicator for recent apps, as only active apps will be visible.
     defaults write com.apple.dock show-process-indicators -bool false;
     defaults write com.apple.dock autohide -bool true;
+
+    # shot full safari url!
+    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true" && killall Safari
+
     #to reload Dock
     killall Dock;
 fi

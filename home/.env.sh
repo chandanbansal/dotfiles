@@ -3,7 +3,7 @@
 
 export HOME=~
 export GOPATH=$HOME/gocode
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:/opt/homebrew/bin:$PATH
 
 export EDITOR=vim-wrapper
 #export PATH=$DOTFILES/bin:$PATH
@@ -35,11 +35,11 @@ export HOSTNAME=$(hostname -s)
 # export GCC_COLORS=1
 # export SYSTEM_COLOUR=$($HOME/.local/bin/system-colour $HOSTNAME)
 
-# if [[ $USER == root ]]; then
-#    PROMPT_COLOUR=160 # red
+if [[ $USER == root ]]; then
+    PROMPT_COLOUR=160 # red
 # else
 #    PROMPT_COLOUR=$SYSTEM_COLOUR
-# fi
+fi
 
 HISTSIZE=200000
 HISTFILE=~/.history
