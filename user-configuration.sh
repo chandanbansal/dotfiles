@@ -51,9 +51,9 @@ if [ $PLATFORM == 'Darwin' ]; then
     defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -bool false
 
     # Trackpad: enable tap to click for this user and for the login screen
-    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-    defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-    defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    # defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    # defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
     # Finder: show status bar, path bar, posix path
     defaults write com.apple.finder ShowStatusBar -bool true
@@ -73,7 +73,11 @@ if [ $PLATFORM == 'Darwin' ]; then
     defaults write com.apple.dock autohide -bool true;
 
     # show full safari url!
-    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool "true"
+    defaults write com.apple.safari "ShowFullURLInSmartSearchField" -bool true
+
+    # always show date in menu bar top right instead of just day of the week.
+    defaults write com.apple.menuextra.clock ShowDate -bool true;
+    defaults write com.apple.menuextra.clock DateFormat -string "d MMM  h:mm a"
 
     echo "mac properties completed"
 
@@ -126,6 +130,18 @@ echo "00 01 * * * osascript ~/.local/bin/EvernoteBackup.scpt >/dev/null 2>&1" >>
 cat mycron | uniq | tee mycron 
 crontab mycron
 rm mycron
+
+
+# #sudo cron
+# echo "set up hostupdate crontab"
+# sudo crontab -l > mycron_sudo || true
+# HOME_DIR=~
+# echo -e "HOME_DIR=$HOME_DIR\n$(cat ${HOME_DIR}/Dropbox/bash/crons/update_hosts.sh)" > ${HOME_DIR}/Dropbox/bash/crons/update_hosts.new.sh
+# echo "5 * * * * bash ${HOME_DIR}/Dropbox/bash/crons/update_hosts.new.sh >/dev/null 2>&1" >> mycron_sudo 
+# cat mycron_sudo | uniq | tee mycron_sudo 
+# sudo crontab mycron_sudo
+# rm mycron_sudo
+
 
 # copy terminal font and rebuild font cache if necessary
 if [ $PLATFORM == 'Darwin' ]; then

@@ -16,6 +16,7 @@ brew unlink md5sha1sum || true
 
 # Upgrade or install (logic necessary)
 packages=(
+    mysql-client
     coreutils
     ffmpeg
     git
